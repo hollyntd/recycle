@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="bg">
+            <img class="img-fluid" src="{{ url_for('static', filename='img/item_page.png')}}" >
+        </div>
+
+<!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Left links -->
+                </div>
+        <!-- Right elements -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Basket (0)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row gutters">
+
+<!-- Left - Avatar -->
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="account-settings">
+                            <div class="user-profile">
+                                <div class="user-avatar">
+                                    <img class="img-thumbnail" style="max-width:80%" src="{{ url_for('static', filename='img/item_ava4.png')}}" alt="avatar">
+                                </div>
+                                <h5 class="user-name">{{item.type}} </h5>
+                                <h6 class="user-email">Posted by: {{item.owner.first_name}} {{item.owner.last_name}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+<!-- Right-->
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+<!-- Personal Details-->
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h5 class="mb-2 text-primary">Description: </h5>
+                                        <p>{{item.description}}</p>
+                                        <a href="/dashboard"><img style="max-width:10%" src="{{ url_for('static', filename='img/add.png')}}" alt="add_icon"></a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+.theme {
+    width: auto;
+    background-image: src="{{ url_for('static', filename='img/theme.png')}}";
+    background-repeat: repeat;
+}
